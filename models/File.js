@@ -5,7 +5,7 @@ const fileSchema = new Schema({
     name: String,
     url: String,
     size: Number,
-    folder: { type: String, default: null }, // This will link to a folder if one exists
+    folder: { type: String, default: null }, 
     createdAt: { type: Date, default: Date.now }
 });
 

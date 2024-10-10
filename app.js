@@ -57,26 +57,25 @@ const io = socketIo(server);
 io.on('connection', (socket) => {
     console.log('A user connected:', socket.id);
 
-    // Listen for file upload notifications
+    // upload notifications
     socket.on('fileUpload', (data) => {
         console.log('File upload completed:', data);
         io.emit('fileUploaded', data);
     });
 
-    // Listen for file download notifications
+    // download notifications
     socket.on('fileDownload', (data) => {
         console.log('File download started:', data);
         io.emit('fileDownloaded', data);
     });
 
-    // Listen for file/folder deletion notifications
+    //  deletion notifications
     socket.on('fileDelete', (data) => {
         console.log('File or folder deleted:', data);
         io.emit('fileDeleted', data);
     });
 
-    // Handle disconnect
-    socket.on('disconnect', () => {
+        socket.on('disconnect', () => {
         console.log('User disconnected:', socket.id);
     });
 });

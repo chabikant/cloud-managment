@@ -23,7 +23,6 @@ exports.getFolderContents = async (req, res) => {
     const { folderId } = req.params;
 
     try {
-        // Fetch subfolders and files in the current folder
         const folders = await Folder.find({ parentFolder: folderId });
         const files = await File.find({ folder: folderId });
 

@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const cron = require('node-cron');
 
-// Temporary folder path
 const tempFolderPath = path.join(__dirname, '../temp');
 
 // Function to delete files older than 1 hour
@@ -25,7 +24,6 @@ const deleteOldFiles = () => {
                     return;
                 }
 
-                // If the file is older than 1 hour, delete it
                 if ((now - stats.mtimeMs) > threshold) {
                     fs.unlink(filePath, (err) => {
                         if (err) {
@@ -40,7 +38,6 @@ const deleteOldFiles = () => {
     });
 };
 
-// Schedule the cleanup job to run every hour
 cron.schedule('0 * * * *', () => {
     console.log('Running temp file cleanup cron job');
     deleteOldFiles();
