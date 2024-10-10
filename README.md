@@ -23,5 +23,21 @@ A cloud file management system that allows users to authenticate using OAuth2, m
 1. Clone the repository:
 
    ```bash
-   git clone
+   git clone https://github.com/chabikant/cloud-managment.git
    cd cloud-file-manager
+2. Install dependencies:
+   npm install
+   
+3. Set up your environment variables in a .env file:
+   PORT=5000
+MONGODB_URI=your_mongodb_uri
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+SENDGRID_API_KEY=your_sendgrid_api_key
+GCS_BUCKET_NAME=your_gcs_bucket_name
+GCS_PROJECT_ID=your_gcs_project_id
+GCS_KEYFILE=path_to_your_gcs_service_account_key.json
+SESSION_SECRET=your_secret_session_key
+
+4.Run the application:
+npm start
